@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8e9e9;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .heart-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .heart {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    transform: rotate(-45deg);
+    position: relative;
+    animation: heartbeat 1s infinite;
+  }
+  
+  .heart::before,
+  .heart::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .heart::before {
+    top: -15px;
+    left: 0;
+  }
+  
+  .heart::after {
+    left: 15px;
+    top: 0;
+  }
+  
+  @keyframes heartbeat {
+    0%, 100% {
+      transform: scale(1) rotate(-45deg);
+    }
+    50% {
+      transform: scale(1.2) rotate(-45deg);
+    }
+  }
+  
+  .apology-text {
+    font-size: 2em;
+    color: #e74c3c;
+    margin-bottom: 10px;
+    animation: fadeIn 2s;
+  }
+  
+  .message {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 20px;
+    animation: fadeIn 3s;
+  }
+  
+  .forgive-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .forgive-btn:hover {
+    background-color: #c0392b;
+  }
+  
+  .surprise {
+    font-size: 1.5em;
+    color: #2ecc71;
+    margin-top: 20px;
+    display: none;
+    animation: popUp 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes popUp {
+    from {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
